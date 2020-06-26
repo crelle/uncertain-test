@@ -1,3 +1,5 @@
+import org.junit.Test;
+
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
@@ -36,6 +38,21 @@ public class JunitTest {
             fileWriter.write(i);
         }
         fileReader.close();
+        fileWriter.flush();
+        fileWriter.close();
+    }
+
+    @Test
+    public void test5() throws IOException {
+        FileWriter fileWriter = new FileWriter("E:\\testNew.txt");
+        fileWriter.write("我爱你中国");
+        fileWriter.write(13);
+        fileWriter.write(10);
+        fileWriter.write("97");
+//        fileWriter.write(97);
+//        fileWriter.write(98);
+//        fileWriter.write(99);
+//        fileWriter.write(100);
         fileWriter.flush();
         fileWriter.close();
     }
