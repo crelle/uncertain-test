@@ -1,3 +1,4 @@
+import javafx.concurrent.Worker;
 import org.junit.Test;
 
 import java.io.*;
@@ -5,9 +6,7 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.concurrent.Executors;
-import java.util.concurrent.ThreadPoolExecutor;
-import java.util.concurrent.TimeUnit;
+import java.util.concurrent.*;
 
 public class JunitTest {
 
@@ -146,9 +145,7 @@ public class JunitTest {
     }
 
     static class Task implements Runnable {
-
         public void run() {
-
             try {
                 Long duration = (long) (Math.random() * 5);
                 System.out.println("Running Task! Thread Name: " +
@@ -159,6 +156,72 @@ public class JunitTest {
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
+        }
+    }
+
+    @Test
+    public void test08() throws InterruptedException {
+        CountDownLatch startSignal = new CountDownLatch(1);
+        CountDownLatch doneSignal = new CountDownLatch(5);
+        for (int i = 0; i < 5; ++i) {
+            // create and start threads
+            new Thread(new Worker(startSignal, doneSignal)).start();
+        }
+        System.out.println("aaaaaaaaaaaa");
+        // don't let run yet
+        startSignal.countDown();
+        // let all threads proceed
+        System.out.println("bbbbbbbbbbbbbbbbb");
+        doneSignal.await();
+        // wait for all to finish
+    }
+
+
+
+    class Worker implements Runnable {
+        private final CountDownLatch startSignal;
+        private final CountDownLatch doneSignal;
+        Worker(CountDownLatch startSignal, CountDownLatch doneSignal) {
+            this.startSignal = startSignal;
+            this.doneSignal = doneSignal;
+        }
+        public void run() {
+            try {
+                startSignal.await();
+                doWork();
+                doneSignal.countDown();
+            } catch (InterruptedException ex) {} // return;
+        }
+
+        void doWork() {
+            System.out.println("do work!");
+        }
+    }
+
+    @Test
+    public  void test8() throws InterruptedException {
+        CountDownLatch doneSignal = new CountDownLatch(5);
+        Executor e = Executors.newFixedThreadPool(1);
+
+        for (int i = 0; i < 5; ++i) // create and start threads
+            e.execute(new WorkerRunnable(doneSignal, i));
+            doneSignal.await();           // wait for all to finish
+    }
+
+    class WorkerRunnable implements Runnable {
+        private final CountDownLatch doneSignal;
+        private final int i;
+        WorkerRunnable(CountDownLatch doneSignal, int i) {
+            this.doneSignal = doneSignal;
+            this.i = i;
+        }
+        public void run() {
+            doWork(i);
+            doneSignal.countDown();
+        }
+
+        void doWork(int i) {
+            System.out.println(i);
         }
     }
 
