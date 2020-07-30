@@ -19,7 +19,7 @@ import java.util.Date;
 public class DateSerializer implements JsonSerializer<Date> {
     @Override
     public JsonElement serialize(Date date, Type type, JsonSerializationContext jsonSerializationContext) {
-        DateFormat dateFormat = DateFormat.getDateInstance();
+        DateFormat dateFormat = DateFormat.getDateInstance(DateFormat.LONG);
         return new JsonPrimitive(dateFormat.format(date));
     }
 }
