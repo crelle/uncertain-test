@@ -6,6 +6,8 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.concurrent.*;
 
 public class JunitTest {
@@ -227,7 +229,21 @@ public class JunitTest {
 
     @Test
     public void test9(){
-
+        List<String> lists = new ArrayList<String>();
+        List<String> newLists = new ArrayList<String>();
+        lists.add("1111");
+        lists.add("2222");
+        lists.add("3333");
+        lists.forEach(list->{
+            if(null!=list){
+                newLists.add(list+"aa");
+            }
+        });
+        newLists.forEach(list->{
+            if(null!=list){
+              System.out.println(list);
+            }
+        });
     }
 
 }

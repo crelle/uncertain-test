@@ -10,8 +10,8 @@ import java.util.List;
  */
 public class ArrayListForeachTest {
     public static void main(String[] args) {
-//        foreach();
-        iterator();
+        foreach();
+//        iterator();
 
     }
 
