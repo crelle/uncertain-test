@@ -22,7 +22,7 @@ public class Approach8 {
         processPersonsWithFunction(
                 Utils.getPersonsLists(),
                 p -> p.getGender() == Person.Sex.MALE
-                        && p.getAge() >= 13
+                        && p.getAge() >= 16
                         && p.getAge() <= 25,
                 p -> p.getEmailAddress(),
                 email -> System.out.println(email)

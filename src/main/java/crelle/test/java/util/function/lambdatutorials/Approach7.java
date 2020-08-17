@@ -18,7 +18,7 @@ import java.util.function.Predicate;
  **/
 public class Approach7 {
     public static void main(String[] args) {
-        processPersons(Utils.getPersonsLists(), p -> p.getGender() == Person.Sex.MALE && p.getAge() >= 13 && p.getAge() <= 25, p -> p.printPerson()
+        processPersons(Utils.getPersonsLists(), p -> p.getGender() == Person.Sex.MALE && p.getAge() >= 16 && p.getAge() <= 25, p -> p.printPerson()
         );
     }
 
