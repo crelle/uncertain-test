@@ -1,13 +1,18 @@
+import com.fasterxml.jackson.annotation.JsonFormat;
+import crelle.test.java.other.beans.Person;
 import javafx.concurrent.Worker;
+import org.apache.commons.collections4.MapUtils;
 import org.junit.Test;
+import sun.util.calendar.BaseCalendar;
+import sun.util.calendar.LocalGregorianCalendar;
 
 import java.io.*;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.List;
+import java.sql.Date;
+import java.util.*;
 import java.util.concurrent.*;
 
 public class JunitTest {
@@ -245,5 +250,42 @@ public class JunitTest {
             }
         });
     }
+    @JsonFormat(pattern = "yyyy-MM-DD HH:mm:ss")
+    private Date date;
+    @Test
+    public void test10(){
+        System.out.println(Locale.getDefault());
+        System.out.println(TimeZone.getDefault());
+        System.out.println(date);
+    }
+
+    @Test
+    public void test11(){
+        Map<String,Object> map = new HashMap<String,Object>();
+        map.put("name","zhangsan");
+        map.put("age",12);
+        Map<String,Object> map1 = new HashMap<String,Object>();
+        map.put("name","lisi");
+        map.put("age",13);
+        Map<String,Object> map2 = new HashMap<String,Object>();
+        map.put("name","wangwu");
+        map.put("age",14);
+        List<Map<String,Object>> mapList = new ArrayList<Map<String, Object>>();
+        mapList.add(map);
+        mapList.add(map1);
+        mapList.add(map2);
+
+        mapList.parallelStream().map(obj->{
+            Person person = new Person();
+            person.setName(MapUtils.getString(obj,"name"));
+            person.setAge(MapUtils.getByte(obj,"age"));
+            return person;
+        }).forEach(person -> {
+            System.out.println(person.getName()+"年龄"+person.getAge());
+        });
+    }
+
+
+
 
 }
