@@ -1,7 +1,7 @@
-package crelle.test.java.other;
+package crelle.test.java.auxiliary;
 
-import crelle.test.java.other.beans.Order;
-import crelle.test.java.other.beans.Person;
+import crelle.test.java.auxiliary.beans.Order;
+import crelle.test.java.auxiliary.beans.Person;
 
 import java.time.LocalDate;
 import java.util.ArrayList;

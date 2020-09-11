@@ -1,6 +1,6 @@
 package crelle.test.java.util.stream;
 
-import crelle.test.java.other.Utils;
+import crelle.test.java.auxiliary.Utils;
 
 /**
  * @author:crelle

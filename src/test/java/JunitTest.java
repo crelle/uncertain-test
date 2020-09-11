@@ -1,10 +1,7 @@
 import com.fasterxml.jackson.annotation.JsonFormat;
-import crelle.test.java.other.beans.Person;
-import javafx.concurrent.Worker;
+import crelle.test.java.auxiliary.beans.Person;
 import org.apache.commons.collections4.MapUtils;
 import org.junit.Test;
-import sun.util.calendar.BaseCalendar;
-import sun.util.calendar.LocalGregorianCalendar;
 
 import java.io.*;
 import java.net.HttpURLConnection;
@@ -12,6 +9,8 @@ import java.net.URL;
 import java.security.MessageDigest;
 import java.security.NoSuchAlgorithmException;
 import java.sql.Date;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.*;
 
@@ -283,6 +282,19 @@ public class JunitTest {
         }).forEach(person -> {
             System.out.println(person.getName()+"年龄"+person.getAge());
         });
+    }
+
+    @Test
+    public void test12() throws ParseException {
+        SimpleDateFormat simpleDateFormat = new SimpleDateFormat("yyyy-MM-dd");
+
+       java.util.Date date = simpleDateFormat.parse("2020-12-31");
+        java.util.Date date1 = simpleDateFormat.parse("2020-09-07");
+       long milldate = date.getTime();
+       long milldate1 =  date1.getTime();
+       System.out.println((milldate-milldate1)/(1000*60*60*24*7));
+
+
     }
 
 

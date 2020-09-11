@@ -1,10 +1,8 @@
 package crelle.test.java.util.function.lambdatutorials;
 
-import crelle.test.java.other.Utils;
-import crelle.test.java.other.beans.Person;
+import crelle.test.java.auxiliary.Utils;
+import crelle.test.java.auxiliary.beans.Person;
 
-import java.time.LocalDate;
-import java.util.ArrayList;
 import java.util.List;
 import java.util.function.Predicate;
 

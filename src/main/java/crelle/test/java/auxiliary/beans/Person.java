@@ -1,4 +1,4 @@
-package crelle.test.java.other.beans;
+package crelle.test.java.auxiliary.beans;
 
 import java.time.LocalDate;
 

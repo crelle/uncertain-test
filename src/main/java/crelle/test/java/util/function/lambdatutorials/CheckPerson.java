@@ -1,6 +1,6 @@
 package crelle.test.java.util.function.lambdatutorials;
 
-import crelle.test.java.other.beans.Person;
+import crelle.test.java.auxiliary.beans.Person;
 
 /**
  * @author:crelle

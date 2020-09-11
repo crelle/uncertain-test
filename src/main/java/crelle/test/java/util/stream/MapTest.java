@@ -1,7 +1,7 @@
 package crelle.test.java.util.stream;
 
-import crelle.test.java.other.Utils;
-import crelle.test.java.other.beans.Person;
+import crelle.test.java.auxiliary.Utils;
+import crelle.test.java.auxiliary.beans.Person;
 import org.apache.commons.collections4.MapUtils;
 
 import java.util.ArrayList;
