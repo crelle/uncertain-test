@@ -297,6 +297,15 @@ public class JunitTest {
 
     }
 
+    @Test
+    public void test13(){
+       Map<String,String> map = new HashMap<String,String>(100000000);
+       map.put("a","1");
+       System.out.println(map.put("a","2"));
+        System.out.println(map.put("b","3"));
+       System.out.println(map.get("a"));
+    }
+
 
 
 
