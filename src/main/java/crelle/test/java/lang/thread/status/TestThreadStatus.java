@@ -21,7 +21,7 @@ public class TestThreadStatus implements Runnable
 
     public void run()
     {
-        thread myThread = new thread();
+        Thread2 myThread = new Thread2();
         Thread thread2 = new Thread(myThread);
 
         // thread1 created and is currently in the NEW state.
@@ -50,6 +50,7 @@ public class TestThreadStatus implements Runnable
         {
             // waiting for thread2 to die
             thread2.join();
+            thread2.notifyAll();
         }
         catch (InterruptedException e)
         {
@@ -63,14 +64,15 @@ public class TestThreadStatus implements Runnable
 
 
 // Java program to demonstrate thread states
-class thread implements Runnable
+class Thread2 implements Runnable
 {
     public void run()
     {
         // moving thread2 to timed waiting state
         try
         {
-            Thread.sleep(1500);
+//            Thread.sleep(1500);
+            this.wait(1000);
         }
         catch (InterruptedException e)
         {
@@ -81,7 +83,8 @@ class thread implements Runnable
                 TestThreadStatus.thread1.getState());
         try
         {
-            Thread.sleep(200);
+//            Thread.sleep(2000*5);
+            this.wait(2000*5);
         }
         catch (InterruptedException e)
         {

@@ -1,5 +1,6 @@
 package crelle.test.java.auxiliary.beans;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
 /**
@@ -9,7 +10,9 @@ import java.time.LocalDate;
  * @date:2020/8/15
  * @description:XX
  **/
-public class Person {
+public class Person implements Serializable {
+
+    private static final Long serialVersionUID = 237898764368L;
 
     public enum Sex {
         MALE, FEMALE
@@ -23,6 +26,10 @@ public class Person {
     private String emailAddress;
 
     private int age;
+    public Person() {}
+    public Person(String name) {
+        this.name = name;
+    }
 
     public void printPerson() {
       System.out.println(toString());

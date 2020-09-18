@@ -1,5 +1,6 @@
 import com.fasterxml.jackson.annotation.JsonFormat;
 import crelle.test.java.auxiliary.beans.Person;
+import org.apache.commons.collections4.CollectionUtils;
 import org.apache.commons.collections4.MapUtils;
 import org.junit.Test;
 
@@ -304,6 +305,16 @@ public class JunitTest {
        System.out.println(map.put("a","2"));
         System.out.println(map.put("b","3"));
        System.out.println(map.get("a"));
+    }
+
+    @Test
+    public void test14(){
+
+    }
+
+    @Test
+    public void test15(){
+        test14();
     }
 
 

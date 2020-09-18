@@ -17,7 +17,9 @@ public class ThreadLoaclTest1 {
 
         t1.start();
         t2.start();
+        //等待t1线程执行完
         t1.join();
+        //等待t2线程执行完
         t2.join();
         System.out.println(Thread.currentThread().getName()+":"+threadLocal.get());
     }
