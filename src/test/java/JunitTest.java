@@ -308,13 +308,19 @@ public class JunitTest {
     }
 
     @Test
-    public void test14(){
-
+    public int test14(){
+        int a = 0;
+        try{
+            a = 1;
+            return a;
+        }finally {
+            a= 2;
+        }
     }
 
     @Test
     public void test15(){
-        test14();
+        System.out.println(test14());
     }
 
 
