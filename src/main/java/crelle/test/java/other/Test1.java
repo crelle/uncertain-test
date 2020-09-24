@@ -1,5 +1,10 @@
 package crelle.test.java.other;
 
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.Hashtable;
+import java.util.Map;
+
 /**
  * @author:crelle
  * @className:Test1
@@ -9,7 +14,9 @@ package crelle.test.java.other;
  **/
 public class Test1 {
     public static void main(String[] args) {
-        System.out.println(add());
+//        System.out.println(add());
+        Map<String,String> map = new Hashtable<>();
+        map.remove(null);
     }
 
     private static int add(){
