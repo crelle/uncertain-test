@@ -15,8 +15,11 @@ import java.util.Map;
 public class Test1 {
     public static void main(String[] args) {
 //        System.out.println(add());
-        Map<String,String> map = new Hashtable<>();
-        map.remove(null);
+//        Map<String,String> map = new Hashtable<>();
+//        map.remove(null);
+        long a = 999999L;
+        int b = (int)a;
+        System.out.println(b);
     }
 
     private static int add(){
