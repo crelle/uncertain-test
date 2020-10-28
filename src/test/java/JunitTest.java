@@ -14,6 +14,7 @@ import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.*;
 import java.util.concurrent.*;
+import java.util.stream.Collectors;
 
 public class JunitTest {
 
@@ -321,6 +322,19 @@ public class JunitTest {
     @Test
     public void test15(){
         System.out.println(test14());
+    }
+
+    @Test
+    public void test16(){
+
+        Map<String, List<String>> people = new HashMap<>();
+        people.put("John", Arrays.asList("555-1123", "555-3389"));
+        people.put("Mary", Arrays.asList("555-2243", "555-5264"));
+        people.put("Steve", Arrays.asList("555-6654", "555-3242"));
+
+        List<String> phones = people.values().stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
     }
 
 

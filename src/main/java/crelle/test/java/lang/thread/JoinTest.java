@@ -1,5 +1,14 @@
 package crelle.test.java.lang.thread;
 
+/**
+ *@author:crelle
+ *@date:2020/10/27
+ *@title:
+ *@description: join(),主线程等待join线程执行完后在执行
+ *@params:
+ *@return:
+ *@throw:
+ */
 public class JoinTest {
     public static void main(String[] args) throws InterruptedException {
 

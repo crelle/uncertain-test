@@ -2,6 +2,9 @@ package crelle.test.java.util.stream;
 
 import crelle.test.java.auxiliary.Utils;
 
+import java.util.*;
+import java.util.stream.Collectors;
+
 /**
  * @author:crelle
  * @className:FlatMap
@@ -28,5 +31,16 @@ public class FlatMap {
                 .flatMap(order -> order.getSubOrder().stream())
                 .map(order -> order.getOrderName())
                 .forEach(System.out::println);
+
+        //
+        Map<String, List<String>> people = new HashMap<>();
+        people.put("John", Arrays.asList("555-1123", "555-3389"));
+        people.put("Mary", Arrays.asList("555-2243", "555-5264"));
+        people.put("Steve", Arrays.asList("555-6654", "555-3242"));
+
+        List<String> phones = people.values().stream()
+                .flatMap(Collection::stream)
+                .collect(Collectors.toList());
+        System.out.println(phones);
     }
 }

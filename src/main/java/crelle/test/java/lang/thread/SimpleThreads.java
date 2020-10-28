@@ -12,6 +12,7 @@ public class SimpleThreads {
                 message);
     }
 
+
     private static class MessageLoop implements Runnable {
         public void run() {
             String importantInfo[] = {
