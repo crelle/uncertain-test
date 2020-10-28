@@ -21,7 +21,8 @@ public class DaemonTest {
                 System.out.print(i);
             }
         });
-//        thread.setDaemon(true);
+        //设置为守护线程
+        thread.setDaemon(true);
         thread.start();
         //主线程等待用户输入后退出
         System.in.read();
