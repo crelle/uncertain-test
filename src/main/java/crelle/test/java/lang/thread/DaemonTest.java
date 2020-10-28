@@ -11,21 +11,19 @@ import java.io.IOException;
  **/
 public class DaemonTest {
 
-    public static void execute(){
-        for (int i = 0;; i++) {
-            try {
-                Thread.sleep(1000);
-            }catch (InterruptedException ex){
-
-            }
-            System.out.print(i);
-        }
-    }
-
     public static void main(String[] args) throws IOException {
-        Thread thread = new Thread(()->execute());
-        thread.setDaemon(true);
+        Thread thread = new Thread(() -> {
+            for (int i = 0; ; i++) {
+                try {
+                    Thread.sleep(1000);
+                } catch (InterruptedException ex) {
+                }
+                System.out.print(i);
+            }
+        });
+//        thread.setDaemon(true);
         thread.start();
+        //主线程等待用户输入后退出
         System.in.read();
     }
 }
