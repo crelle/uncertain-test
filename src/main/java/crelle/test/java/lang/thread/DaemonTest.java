@@ -9,7 +9,7 @@ import java.io.IOException;
  * @date:2020/10/28
  * @description:主线程退出守护线程也退出
  **/
-public class DeamonTest {
+public class DaemonTest {
 
     public static void execute(){
         for (int i = 0;; i++) {
