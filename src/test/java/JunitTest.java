@@ -308,7 +308,6 @@ public class JunitTest {
        System.out.println(map.get("a"));
     }
 
-    @Test
     public int test14(){
         int a = 0;
         try{
@@ -335,6 +334,21 @@ public class JunitTest {
         List<String> phones = people.values().stream()
                 .flatMap(Collection::stream)
                 .collect(Collectors.toList());
+    }
+
+    @Test
+    public void test17(){
+        int hash = "asdfdsa".hashCode();
+
+      int index =   hash & 0x7FFFFFFF;
+      System.out.println(index);
+      System.out.println(-718613250 & 2147483647);
+      System.out.println(2147483647 - 718613250);
+      System.out.println(5 & 3);
+      System.out.println(-5 & 3);
+      System.out.println(-5 & -3);
+
+      System.out.println(5 & -3);
     }
 
 
