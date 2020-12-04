@@ -11,7 +11,7 @@ import java.util.stream.Stream;
  **/
 public class LimitTest {
     public static void main(String[] args) {
-        Stream<String> streamGenerated = Stream.generate(()->"element")
-                .limit(10);
+   Stream.generate(()->"element")
+                .limit(1).forEach(System.out::println);
     }
 }
