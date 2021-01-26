@@ -2,6 +2,8 @@ package crelle.test.java.text;
 
 import java.text.DateFormat;
 import java.text.FieldPosition;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
@@ -12,7 +14,7 @@ import java.util.Date;
  * @description:DateFormat测试
  **/
 public class DateFormatTest {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws ParseException {
         Date date = new Date();
         System.out.println("###########SHORT类型格式化日期###############");
         // SHORT类型格式化日期
@@ -59,5 +61,6 @@ public class DateFormatTest {
         //FULL类型格式化日期
         DateFormat dateForma11 = DateFormat.getDateTimeInstance(DateFormat.FULL,DateFormat.FULL);
         System.out.println(dateForma11.format(date));
+
     }
 }

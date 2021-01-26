@@ -17,9 +17,15 @@ public class Test1 {
 //        System.out.println(add());
 //        Map<String,String> map = new Hashtable<>();
 //        map.remove(null);
-        long a = 999999L;
-        int b = (int)a;
-        System.out.println(b);
+//        long a = 999999L;
+//        int b = (int)a;
+//        System.out.println(b);
+
+        char zhang = '郭';
+        char qiang = '浩';
+        System.out.println((int)zhang + ":"+(int)qiang);
+        int one = 78765448;
+        System.out.println((char)one);
     }
 
     private static int add(){
