@@ -11,7 +11,7 @@ import java.text.DecimalFormat;
  **/
 public class StringTest {
     public static void main(String[] args) {
-        test2();
+        test3();
     }
 
     private static void test1(){
@@ -35,6 +35,10 @@ public class StringTest {
 
         DecimalFormat df = new DecimalFormat("#.00");
         System.out.println(df.format(f2));
+    }
+
+    private static void test3(){
+        System.out.println("1234567".substring(0,7));
     }
 
 }
