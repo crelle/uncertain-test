@@ -1,5 +1,6 @@
 package crelle.test.java.lang;
 
+import java.math.BigDecimal;
 import java.text.DecimalFormat;
 
 /**
@@ -11,10 +12,10 @@ import java.text.DecimalFormat;
  **/
 public class StringTest {
     public static void main(String[] args) {
-        test3();
+        test4();
     }
 
-    private static void test1(){
+    private static void test(){
         System.out.println("abc".replace("a",""));
     }
 
@@ -39,6 +40,18 @@ public class StringTest {
 
     private static void test3(){
         System.out.println("1234567".substring(0,7));
+    }
+
+    private static void test4(){
+        String qty = "100000";
+        Double result = Double.valueOf(qty);
+//        BigDecimal decimal = new BigDecimal()
+        Double newVal = Math.abs(result);
+        if(newVal<5000){
+            System.out.println(newVal);
+        }else{
+            System.out.println("大于5000！");
+        }
     }
 
 }
