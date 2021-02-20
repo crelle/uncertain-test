@@ -12,6 +12,10 @@ import java.math.MathContext;
  **/
 public class BigDecimalTest {
     public static void main(String[] args) {
+            test2();
+    }
+
+    private static void test1(){
         BigDecimal bigDecimal1 = new BigDecimal(5.023);
         BigDecimal bigDecima2 = new BigDecimal(4.98);
         System.out.println(bigDecimal1.subtract(bigDecima2, MathContext.DECIMAL32));
@@ -23,5 +27,10 @@ public class BigDecimalTest {
         Float f1 = 5.023F;
         Float f2 = 4.98F;
         System.out.println(f1-f2);
+    }
+
+    private static void test2(){
+        BigDecimal bigDecimal = new BigDecimal("-12345213466542343.4565432");
+        System.out.println(bigDecimal);
     }
 }

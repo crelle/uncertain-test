@@ -12,7 +12,7 @@ import java.text.DecimalFormat;
  **/
 public class StringTest {
     public static void main(String[] args) {
-        test4();
+        test5();
     }
 
     private static void test(){
@@ -52,6 +52,12 @@ public class StringTest {
         }else{
             System.out.println("大于5000！");
         }
+    }
+
+    private static void test5(){
+        String str = "-123456789";
+        str =str.substring(1,str.length());
+        System.out.println(str);
     }
 
 }
