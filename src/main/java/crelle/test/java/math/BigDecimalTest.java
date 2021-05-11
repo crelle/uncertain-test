@@ -1,5 +1,7 @@
 package crelle.test.java.math;
 
+import org.junit.Test;
+
 import java.math.BigDecimal;
 import java.math.MathContext;
 
@@ -33,4 +35,16 @@ public class BigDecimalTest {
         BigDecimal bigDecimal = new BigDecimal("-12345213466542343.4565432");
         System.out.println(bigDecimal);
     }
+
+    @Test
+    public void test3(){
+        BigDecimal bigDecimal = new BigDecimal("");
+    }
+
+    @Test
+    public void test4(){
+        Double aDouble = new Double("");
+    }
+
+
 }

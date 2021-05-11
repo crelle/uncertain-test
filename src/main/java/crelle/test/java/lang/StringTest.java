@@ -56,4 +56,11 @@ public class StringTest {
         System.out.println(str);
     }
 
+    @Test
+    public void test6(){
+        String str = ".doc.txt.xlsx.pdf";
+        boolean is = str.contains(".txt");
+        System.out.println(is);
+    }
+
 }
