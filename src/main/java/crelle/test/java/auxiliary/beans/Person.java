@@ -1,6 +1,7 @@
 package crelle.test.java.auxiliary.beans;
 
 import java.io.Serializable;
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
@@ -26,6 +27,8 @@ public class Person implements Serializable {
     private String emailAddress;
 
     private int age;
+
+    private BigDecimal money;
     public Person() {}
     public Person(String name) {
         this.name = name;
@@ -75,6 +78,14 @@ public class Person implements Serializable {
         this.age = age;
     }
 
+    public BigDecimal getMoney() {
+        return money;
+    }
+
+    public void setMoney(BigDecimal money) {
+        this.money = money;
+    }
+
     @Override
     public String toString() {
         return "Person{" +
@@ -83,6 +94,7 @@ public class Person implements Serializable {
                 ", gender=" + gender +
                 ", emailAddress='" + emailAddress + '\'' +
                 ", age=" + age +
+                ", money=" + money +
                 '}';
     }
 }

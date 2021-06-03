@@ -1,9 +1,14 @@
 package crelle.test.java.lang;
 
+import com.sun.istack.internal.Nullable;
+import org.apache.commons.collections4.CollectionUtils;
+import org.apache.commons.collections4.ListUtils;
 import org.junit.Test;
 
 import java.math.BigDecimal;
 import java.text.DecimalFormat;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * @author:crelle
@@ -61,6 +66,15 @@ public class StringTest {
         String str = ".doc.txt.xlsx.pdf";
         boolean is = str.contains(".txt");
         System.out.println(is);
+    }
+
+    public static void test7(@Nullable String... strings){
+        System.out.println(strings);
+    }
+
+
+    public static void main(String[] args) {
+        test7("a");
     }
 
 }

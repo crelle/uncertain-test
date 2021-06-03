@@ -3,6 +3,7 @@ package crelle.test.java.auxiliary;
 import crelle.test.java.auxiliary.beans.Order;
 import crelle.test.java.auxiliary.beans.Person;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -24,6 +25,7 @@ public class Utils {
         person1.setGender(Person.Sex.MALE);
         person1.setEmailAddress("123@qq.com");
         person1.setName("tom");
+        person1.setMoney(new BigDecimal(1234.1234));
         personList.add(person1);
 
         Person person2 = new Person();
@@ -33,6 +35,7 @@ public class Utils {
         person2.setGender(Person.Sex.MALE);
         person2.setEmailAddress("456@qq.com");
         person2.setName("john");
+        person2.setMoney(new BigDecimal(432100.4321));
         personList.add(person2);
 
         Person person3 = new Person();
@@ -42,6 +45,7 @@ public class Utils {
         person3.setGender(Person.Sex.FEMALE);
         person3.setEmailAddress("789@qq.com");
         person3.setName("lili");
+//        person3.setMoney(new BigDecimal(1.4));
         personList.add(person3);
         return personList;
     }
