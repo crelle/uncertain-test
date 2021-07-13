@@ -4,7 +4,7 @@ package crelle.test.java.lang.reflect.modifier;
  * 一个线程写，多个线程读 线程安全
  */
 public class VolatileSingleWriterTest {
-    private static volatile int MY_INT = 0;
+    private static volatile  int MY_INT = 0;
     public static void main(String[] args) {
         new ChangeListener().start();
         new ChangeListener().start();
@@ -18,6 +18,7 @@ public class VolatileSingleWriterTest {
         @Override
         public void run() {
             int local_value = MY_INT;
+            System.out.println("innital value for MY_INT : "+ MY_INT);
             while ( local_value < 5){
                 if( local_value!= MY_INT){
                     System.out.println("Got Change for MY_INT : "+ MY_INT);
