@@ -31,4 +31,13 @@ public class HashSetTest {
         // 打印过滤后的键集合
         System.out.println(filteredKeys);
     }
+
+    @Test
+    public void test2() {
+        String cacheToken = null;
+        if (null == cacheToken || cacheToken.isEmpty()) {
+            System.out.println("111111");
+        }
+        System.out.println("222222");
+    }
 }
