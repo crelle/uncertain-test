@@ -2,6 +2,7 @@ package crelle.test.java.util.set;
 
 import org.junit.Test;
 
+import java.math.BigInteger;
 import java.util.HashSet;
 import java.util.Optional;
 import java.util.Set;
@@ -39,5 +40,12 @@ public class HashSetTest {
             System.out.println("111111");
         }
         System.out.println("222222");
+    }
+
+    @Test
+    public void test3() {
+        Set<String> f6StoreUserIds = new HashSet<>();
+       boolean isTrue =  f6StoreUserIds.contains("0");
+       System.out.println(isTrue);
     }
 }
