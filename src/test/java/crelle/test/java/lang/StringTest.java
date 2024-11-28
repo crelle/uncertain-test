@@ -2,6 +2,8 @@ package crelle.test.java.lang;
 
 import org.junit.Test;
 
+import java.math.BigInteger;
+
 /**
  * @author:crelle
  * @className:StringTest
@@ -24,7 +26,7 @@ public class StringTest {
     public void test3() {
         String input = "http://139.196.125.106:85/horizon/oss/statics/public/32c8d8d126164b2d95769bd97a589641.png";
         String[] temp = input.split("/public/");
-        System.out.println(temp[1]);
+        System.out.println("结果是:"+temp[1]);
     }
 
     @Test
@@ -39,4 +41,39 @@ public class StringTest {
 
     }
 
+    @Test
+    public void test5() {
+        BigInteger input1 = new BigInteger("1");
+        String input2 = "1";
+        if (String.valueOf(input1).equals(input2)) {
+            System.out.println("true");
+        } else {
+            System.out.println("false");
+        }
+    }
+
+    @Test
+    public void test6() {
+        String dealerInfo = "福特南";
+        String customerInfo = "维修厂";
+        StringBuffer sb = new StringBuffer();
+
+            int dealerNameSize = dealerInfo.length();
+            if (dealerNameSize > 6) {
+                dealerNameSize = 6;
+            }
+            sb.append(dealerInfo, 0, dealerNameSize);
+
+
+            int customerNameSize = customerInfo.length();
+            if (customerNameSize > 6) {
+                customerNameSize = 6;
+            }
+            sb.append("&");
+            sb.append(customerInfo, 0, customerNameSize);
+            sb.append("仓配群");
+
+        System.out.println(sb);
+    }
 }
+

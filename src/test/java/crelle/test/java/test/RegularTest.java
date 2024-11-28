@@ -13,7 +13,7 @@ public class RegularTest {
     @Test
     public void test1() {
         String str1 = "";
-        String str2 = "123.45";
+        String str2 = "2.1";
         String str3 = "abc";
         System.out.println(isNumeric(str1)); // true
         System.out.println(isNumeric(str2)); // true
@@ -22,4 +22,5 @@ public class RegularTest {
     public  boolean isNumeric(String str) {
         return str != null && str.matches("-?\\d+(\\.\\d+)?");
     }
+
 }

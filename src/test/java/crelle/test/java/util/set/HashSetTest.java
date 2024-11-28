@@ -1,9 +1,11 @@
 package crelle.test.java.util.set;
 
+import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
 
 import java.math.BigInteger;
 import java.util.HashSet;
+import java.util.List;
 import java.util.Optional;
 import java.util.Set;
 
@@ -47,5 +49,15 @@ public class HashSetTest {
         Set<String> f6StoreUserIds = new HashSet<>();
        boolean isTrue =  f6StoreUserIds.contains("0");
        System.out.println(isTrue);
+    }
+
+    @Test
+    public void test4(){
+        List<Integer> list = null;
+        if(CollectionUtils.isNotEmpty(list)){
+            System.out.println("1111");
+        }else{
+            System.out.println("2222");
+        }
     }
 }
