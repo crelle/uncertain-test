@@ -102,8 +102,6 @@ public class LocalDateTimeTest {
     }
 
     public static LocalDateTime localDateTimeFormat(LocalDateTime localDateTime, String formatterStr) {
-
-
         // 创建一个格式化器，指定格式为"yyyy-MM-dd"
         DateTimeFormatter formatter = DateTimeFormatter.ofPattern(formatterStr);
 
