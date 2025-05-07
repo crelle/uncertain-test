@@ -23,7 +23,7 @@ public class Utils {
         LocalDate localDate1 = LocalDate.of(2020,4,1);
         person1.setBirthday(localDate1);
         person1.setGender(Person.Sex.MALE);
-        person1.setEmailAddress("123@qq.com");
+        person1.setEmailAddress("tom@qq.com");
         person1.setName("tom");
         person1.setMoney(new BigDecimal(1234.1234));
         personList.add(person1);
@@ -33,7 +33,7 @@ public class Utils {
         LocalDate localDate2 = LocalDate.of(2020,6,1);
         person2.setBirthday(localDate2);
         person2.setGender(Person.Sex.MALE);
-        person2.setEmailAddress("456@qq.com");
+        person2.setEmailAddress("john@qq.com");
         person2.setName("john");
         person2.setMoney(new BigDecimal(432100.4321));
         personList.add(person2);
@@ -43,10 +43,18 @@ public class Utils {
         LocalDate localDate3 = LocalDate.of(2020,8,1);
         person3.setBirthday(localDate3);
         person3.setGender(Person.Sex.FEMALE);
-        person3.setEmailAddress("789@qq.com");
+        person3.setEmailAddress("lili@qq.com");
         person3.setName("lili");
-//        person3.setMoney(new BigDecimal(1.4));
         personList.add(person3);
+
+        Person person4 = new Person();
+        person4.setAge(19);
+        LocalDate localDate4 = LocalDate.of(2020,8,1);
+        person4.setBirthday(localDate4);
+        person4.setGender(Person.Sex.FEMALE);
+        person4.setEmailAddress("sansha@qq.com");
+        person4.setName("sansha");
+        personList.add(person4);
         return personList;
     }
 

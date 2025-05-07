@@ -1,8 +1,10 @@
 package crelle.test.java.lang;
 
+import com.huaqiang.tools.codegeneration.CodeGeneration;
 import org.junit.Test;
 
 import java.math.BigInteger;
+import java.util.Arrays;
 
 /**
  * @author:crelle
@@ -74,6 +76,22 @@ public class StringTest {
             sb.append("仓配群");
 
         System.out.println(sb);
+    }
+
+    @Test
+    public void test7() throws Exception {
+        CodeGeneration codeGeneration = new CodeGeneration();
+        codeGeneration.setDbIp("58.240.18.170");
+        codeGeneration.setDbPort("12083");
+        codeGeneration.setDbName("jt-db");
+        codeGeneration.setUsername("postgres");
+        codeGeneration.setPassword("Archer@post32");
+        codeGeneration.setJdbcType("postgresql");
+        codeGeneration.setParentPackageName("crelle.test");
+        codeGeneration.setModuleName("test");
+        codeGeneration.setTablePrefix("t_");
+        codeGeneration.setTableNames(Arrays.asList("t_device_data","t_alert_handle","t_devices"));
+        codeGeneration.run();
     }
 }
 

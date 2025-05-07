@@ -1,9 +1,13 @@
 package crelle.test.java.util.map;
 
+import com.alibaba.fastjson.JSON;
+import crelle.test.java.auxiliary.Utils;
+import crelle.test.java.auxiliary.beans.Person;
 import org.apache.commons.collections4.CollectionUtils;
 import org.junit.Test;
 
 import java.util.*;
+import java.util.stream.Collectors;
 
 
 /**
@@ -107,5 +111,26 @@ public class MapTest {
         System.out.println("##############################");
         keyList.forEach(System.out::println);
     }
+
+    @Test
+    public void test3() {
+        Map<String,String> map = new HashMap<>();
+        map.put("a","1");
+        map.put("b","2");
+        map.put("c","3");
+        String s = map.get(null);
+        System.out.println(s);
+
+    }
+
+    @Test
+    public void test4() {
+        List<Person> personsLists = Utils.getPersonsLists();
+        Map<String, Person> collect = personsLists.stream().collect(Collectors.toMap(Person::getName, person -> person));
+        System.out.println(JSON.toJSONString(collect));
+
+    }
+
+
 
 }
