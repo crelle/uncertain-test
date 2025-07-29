@@ -56,6 +56,20 @@ public class BigDecimalTest {
 
     @Test
     public void test5(){
-        BigDecimal.valueOf((Double) 3.0);
+        BigDecimal bigDecimal = new BigDecimal("2.01");
+        BigDecimal result1 = bigDecimal.multiply(BigDecimal.valueOf(100)).setScale(0, RoundingMode.DOWN);
+        System.out.println(result1);
+
+        BigDecimal bigDecimal2 = new BigDecimal("2.01232346729828");
+        BigDecimal result2 = bigDecimal2.multiply(BigDecimal.valueOf(100)).setScale(0, RoundingMode.DOWN);
+        System.out.println(result2);
+
+        BigDecimal bigDecimal3 = new BigDecimal("223.99999999999999999999999");
+        BigDecimal result3 = bigDecimal3.multiply(BigDecimal.valueOf(100)).setScale(0, RoundingMode.DOWN);
+        System.out.println(result3);
+
+        BigDecimal bigDecimal4 = new BigDecimal("2");
+        BigDecimal result4 = bigDecimal4.multiply(BigDecimal.valueOf(100)).setScale(0, RoundingMode.DOWN);
+        System.out.println(result4);
     }
 }
