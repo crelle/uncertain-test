@@ -47,7 +47,14 @@ public class HashSetTest {
     @Test
     public void test3() {
         Set<String> f6StoreUserIds = new HashSet<>();
-       boolean isTrue =  f6StoreUserIds.contains("0");
+        f6StoreUserIds.add("4001");
+        f6StoreUserIds.add("4002");
+        f6StoreUserIds.add("4003");
+        f6StoreUserIds.add("4004");
+       boolean isTrue =  f6StoreUserIds.contains("4001");
+        if (f6StoreUserIds.contains("4001")) {
+            System.out.println("包含4001");
+        }
        System.out.println(isTrue);
     }
 
